@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import *
-
+from .models import *
 # Create your views here.
 def informacion_vista (request):
     nombre = "Diego Prado"
@@ -26,5 +26,5 @@ def principal_vista (request):
     return render(request, 'principal.html')
 
 def lista_productos_vista (request):
-    lista = Productos.objects.all()
+    lista = Producto.objects.all()
     return render(request, 'lista_productos.html', locals())
