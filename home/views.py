@@ -24,3 +24,7 @@ def contacto_vista (request):
 
 def principal_vista (request):
     return render(request, 'principal.html')
+
+def lista_productos_vista (request):
+    lista = Productos.objects.all()
+    return render(request, 'lista_productos.html', locals())
