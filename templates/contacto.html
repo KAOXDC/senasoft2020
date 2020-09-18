@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    {% if bandera %}
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ formulario.as_p}}
+        <input type="submit" value="Enviar">
+    </form>
+
+    {% else %}
+    <table>
+        <tr>
+            <td>nombre </td>
+            <td>mensaje </td>
+        </tr>
+        
+        {% for juego in juegos %}
+        <tr>
+            <td>{{juego}}</td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+    {% endif %}
+{% endblock contenido %}
